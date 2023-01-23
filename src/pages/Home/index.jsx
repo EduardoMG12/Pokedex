@@ -22,13 +22,14 @@ export const Home = () => {
         
         return response;
     }
+    console.log(pokemons)
     return (
         <Section>
             <Container maxWidth="false">
-                <Grid container>
+                <Grid container spacing={3}>
                     {pokemons.map((pokemon) => {
                         return (
-                       <Grid item xs="3"  xl="3" key={pokemon.id}>
+                       <Grid item xs={2} key={pokemon.id}>
                             <PokemonCard name={pokemon.name} image={pokemon.sprites.front_default} />
                         </Grid>
                        )
