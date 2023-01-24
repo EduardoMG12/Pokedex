@@ -18,7 +18,7 @@ const PokemonCard = ({ name, image, alt }: IPokemons) => {
           alt={alt}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" textAlign={"center"} >
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">

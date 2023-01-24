@@ -17,10 +17,9 @@ const Card = () => {
 
     }, [])
 
-    console.log(pokemon)
     return (
-        <Container maxWidth={false}>
-            <img src={pokemon?.sprites.front_default} alt="" width={60} />
+        <Container>
+            <img src={pokemon?.sprites.front_default} alt="" />
         </Container>
     )
 }
