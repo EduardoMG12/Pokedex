@@ -4,8 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { IPokemons } from '../../pages/Home';
 
-export default function PokemonCard({ name, image }) {
+
+const PokemonCard = ({ name, image, alt }: IPokemons) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -13,7 +15,7 @@ export default function PokemonCard({ name, image }) {
           component="img"
           height="200"
           image={image}
-          alt="green iguana"
+          alt={alt}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -27,3 +29,5 @@ export default function PokemonCard({ name, image }) {
     </Card>
   );
 }
+
+export default PokemonCard;
