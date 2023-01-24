@@ -37,10 +37,10 @@ export const Home = () => {
     return (
         <Section>
             <Container maxWidth={false}>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} gridTemplateColumns={"repeat(auto-fill, minmax(345px, 1fr)"}>
                     {pokemons.map((pokemon) => {
                         return (
-                            <Grid item xs={2} key={pokemon.id}>
+                            <Grid item key={pokemon.id}>
                                 <PokemonCard name={pokemon.name} image={pokemon.sprites.front_default || ""} alt={`image of ${pokemon.name}`} />
                             </Grid>
                         )
