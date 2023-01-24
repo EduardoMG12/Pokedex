@@ -22,7 +22,6 @@ const PokemonCard = ({ name, image, alt }: IPokemons) => {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-
           </Typography>
         </CardContent>
       </CardActionArea>
