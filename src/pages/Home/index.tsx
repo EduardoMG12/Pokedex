@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import PokemonCard from '../../components/PokemonCard'
 import { Section } from './style'
 import Button from '../../components/Button'
+import { Link } from 'react-router-dom'
 
 export interface IPokemons {
     id?: number,
@@ -41,7 +42,9 @@ export const Home = () => {
                     {pokemons.map((pokemon) => {
                         return (
                             <Grid item key={pokemon.id}>
-                                <PokemonCard name={pokemon.name} image={pokemon.sprites.front_default || ""} alt={`image of ${pokemon.name}`} />
+                                <Link to={`/card/${pokemon.id}`}>
+                                    <PokemonCard name={pokemon.name} image={pokemon.sprites.front_default || ""} alt={`image of ${pokemon.name}`} />
+                                </Link>
                             </Grid>
                         )
                     })}
