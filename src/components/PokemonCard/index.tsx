@@ -4,12 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { IPokemons } from '../../pages/Home';
-
+import { IPokemons } from '../Main';
 
 const PokemonCard = ({ name, image, alt }: IPokemons) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: "rgba(255, 255, 255, 0.7)" }}>
       <CardActionArea>
         <CardMedia
           component="img"
