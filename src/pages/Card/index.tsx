@@ -1,10 +1,9 @@
 import { Box, CircularProgress } from '@mui/material';
 import { Container } from '@mui/system'
 import axios from 'axios'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { IPokemons } from '../../components/Main';
-import { PokemonsContext } from '../../contexts/PokemonsContext';
 
 const Card = () => {
     const [pokemon, setPokemon] = useState<IPokemons[]>([])

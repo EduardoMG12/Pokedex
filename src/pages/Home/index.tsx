@@ -1,11 +1,10 @@
 import { Box, Button, CircularProgress, Container, Grid } from '@mui/material'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import PokemonCard from '../../components/PokemonCard'
 import { Section } from './style'
 import { Link } from 'react-router-dom'
 import { IPokemons } from '../../components/Main'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
-import { VariantProp } from '@mui/joy';
 
 
 export const Home = () => {
