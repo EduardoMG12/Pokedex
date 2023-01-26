@@ -1,5 +1,5 @@
 import { Box, Button, CircularProgress, Container, Grid } from '@mui/material'
-import React, { useContext } from 'react'
+import React from 'react'
 import PokemonCard from '../../components/PokemonCard'
 import { Section } from './style'
 import { Link } from 'react-router-dom'
@@ -8,8 +8,8 @@ import { usePokemons } from '../../hooks/usePokemons'
 
 export const Home = () => {
 
-    const { getPokemons, pokemons, pokemonsToRender, setPokemons, setPokemonsToRender } = usePokemons()
-    
+    const { getPokemons, pokemonsToRender } = usePokemons()
+
     return (
         <Section>
             <Container maxWidth={false}>
@@ -43,4 +43,4 @@ export const Home = () => {
     )
 }
 
-export default Home
+export default Home;

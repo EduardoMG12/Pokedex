@@ -91,4 +91,4 @@ export default function SearchAppBar() {
             </AppBar>
         </Box >
     );
-}
+};

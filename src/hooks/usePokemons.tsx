@@ -1,13 +1,6 @@
 import axios from "axios";
+import { IPokemon } from "interfaces";
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
-
-export interface IPokemon {
-    id?: number,
-    name: string,
-    image: string,
-    alt: string,
-    sprites?: any
-}
 
 interface IPokemonProviderProps {
     children: ReactNode
@@ -23,7 +16,7 @@ interface IPokemonContext {
 
 const PokemonsContext = createContext<IPokemonContext>([] as unknown as IPokemonContext);
 
-export const PokemonProvider: React.FC<IPokemonProviderProps> = ({children}) => {
+export const PokemonProvider: React.FC<IPokemonProviderProps> = ({ children }) => {
 
     const [pokemons, setPokemons] = useState<IPokemon[]>([]);
 
@@ -62,4 +55,4 @@ export const PokemonProvider: React.FC<IPokemonProviderProps> = ({children}) => 
 
 export const usePokemons = () => {
     return useContext(PokemonsContext)
-}
+};

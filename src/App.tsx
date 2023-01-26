@@ -8,13 +8,12 @@ import { PokemonProvider } from './hooks/usePokemons'
 
 function App() {
   return (
-
     <>
       <GlobalStyle />
       <Routes>
         <Route path='/' element={
           <PokemonProvider>
-              <Main />
+            <Main />
           </PokemonProvider>
         }>
           <Route index element={<Home />} />
@@ -24,4 +23,5 @@ function App() {
     </>
   )
 }
-export default App
+
+export default App;

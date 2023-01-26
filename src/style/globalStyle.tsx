@@ -12,13 +12,4 @@ export default createGlobalStyle`
         overflow-x: hidden;
     }
 
-    :root{
-    
-    
-    }
-
-
-
-
-
-`
+`;
