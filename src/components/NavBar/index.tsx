@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import { PokemonsContext } from '../../contexts/PokemonsContext';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -53,8 +54,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+    const { pokemons, setPokemons, pokemonsToRender, setPokemonsToRender } = React.useContext(PokemonsContext)
+    const [pokemonsInput, setPokemonsInput] = React.useState('');
+
+    React.useEffect(() => {
+
+        const filteredPokemons = () => pokemons.filter((pokemon: any) => pokemon.name.toLowerCase().includes(pokemonsInput.toLocaleLowerCase()))
+
+        setPokemonsToRender(filteredPokemons ? filteredPokemons : pokemons)
+
+    }, [pokemonsInput])
+
     return (
-        <Box sx={{ flexGrow: 1, marginBottom: "1.5rem" }}>
+        <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
             <AppBar position="static" sx={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}>
                 <Toolbar>
                     <Typography
@@ -72,12 +84,14 @@ export default function SearchAppBar() {
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
+                            onChange={(e) => setPokemonsInput(e.target.value)}
                             placeholder="Pesquisando…"
                             inputProps={{ 'aria-label': 'search' }}
+                            value={pokemonsInput}
                         />
                     </Search>
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 }
