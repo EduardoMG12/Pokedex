@@ -14,7 +14,12 @@ export interface IPokemons {
 }
 
 export default () => {
+
     const [pokemons, setPokemons] = useState<IPokemons[]>([]);
+
+    const [pokemonsToRender, setPokemonsToRender] = useState(pokemons)
+
+
 
     useEffect(() => {
         getPokemons()
@@ -29,13 +34,15 @@ export default () => {
         }
         const response = axios.all(endPoints.map((url: string) => axios.get(url))).then((res) => {
             setPokemons(res.map((r: any) => r.data))
+            setPokemonsToRender(res.map((r: any) => r.data))
         }).catch((res: string) => console.log(res))
 
         return response;
     }
+
     return (
 
-        <PokemonsContext.Provider value={{ pokemons, setPokemons, getPokemons }}>
+        <PokemonsContext.Provider value={{ pokemons, setPokemons, getPokemons, pokemonsToRender, setPokemonsToRender }}>
             <Header />
             <Outlet />
             <Footer />
