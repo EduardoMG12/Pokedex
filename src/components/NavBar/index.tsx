@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
-import { PokemonsContext } from '../../contexts/PokemonsContext';
+import { usePokemons } from '../../hooks/usePokemons';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -52,17 +52,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-    const { pokemons, setPokemons, pokemonsToRender, setPokemonsToRender } = React.useContext(PokemonsContext)
+    const { pokemons, setPokemons, pokemonsToRender, setPokemonsToRender } = usePokemons()
     const [pokemonsInput, setPokemonsInput] = React.useState('');
 
     React.useEffect(() => {
 
         const filteredPokemons = () => pokemons.filter((pokemon: any) => pokemon.name.toLowerCase().includes(pokemonsInput.toLocaleLowerCase()))
 
-        setPokemonsToRender(filteredPokemons ? filteredPokemons : pokemons)
+        setPokemonsToRender(filteredPokemons)
 
     }, [pokemonsInput])
-
     return (
         <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
             <AppBar position="static" sx={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}>

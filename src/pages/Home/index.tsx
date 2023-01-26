@@ -3,13 +3,13 @@ import React, { useContext } from 'react'
 import PokemonCard from '../../components/PokemonCard'
 import { Section } from './style'
 import { Link } from 'react-router-dom'
-import { IPokemons } from '../../components/Main'
-import { PokemonsContext } from '../../contexts/PokemonsContext'
+import { usePokemons } from '../../hooks/usePokemons'
 
 
 export const Home = () => {
-    const { getPokemons, pokemonsToRender } = useContext(PokemonsContext)
 
+    const { getPokemons, pokemons, pokemonsToRender, setPokemons, setPokemonsToRender } = usePokemons()
+    
     return (
         <Section>
             <Container maxWidth={false}>
