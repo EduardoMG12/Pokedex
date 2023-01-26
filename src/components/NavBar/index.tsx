@@ -8,6 +8,8 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { usePokemons } from '../../hooks/usePokemons';
+import pokemonImageLogo from '../../assets/pokemon.svg'
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -73,7 +75,7 @@ export default function SearchAppBar() {
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         <Link to="/">
-                            <Box component="img" src="/public/assets/pokemon.svg" width="15rem" />
+                            <Box component="img" src={pokemonImageLogo} width="15rem" />
                         </Link>
                     </Typography>
                     <Search>
