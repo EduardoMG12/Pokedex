@@ -25,5 +25,11 @@
     {
       "path": "./tsconfig.node.json"
     }
+  ],
+  "include": [
+    "src"
+  ],
+  "files": [
+    "src/style/styled.d.ts"
   ]
 }
