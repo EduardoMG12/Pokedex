@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import GlobalStyle from './style/globalStyle'
 import Card from './pages/Card'
 import { PokemonProvider } from './hooks/usePokemons'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@material-ui/core/styles'
 import light from './style/themes/light'
 
 function App() {

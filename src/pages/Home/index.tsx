@@ -35,7 +35,7 @@ export const Home = () => {
             </Container>
             <Box sx={{ maxWidth: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }} >
 
-                <Button sx={{ marginBlock: "2rem" }} size="medium" variant="outlined" color="warning" onClick={() => { getPokemons(pokemonsToRender.length + 33) }}>
+                <Button sx={{ marginBlock: "2rem" }} size="medium" variant="contained" color="warning" onClick={() => { getPokemons(pokemonsToRender.length + 33) }}>
                     Loading more
                 </Button>
             </Box>

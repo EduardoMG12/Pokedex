@@ -9,7 +9,7 @@ import { IPokemon } from 'interfaces';
 
 const PokemonCard = ({ name, image, alt }: IPokemon) => {
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: "rgba(255, 255, 255, 0.7)" }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: "rgba(15, 14, 14, 0.7)" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -18,7 +18,7 @@ const PokemonCard = ({ name, image, alt }: IPokemon) => {
           alt={alt}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" textAlign={"center"} >
+          <Typography color="rgba(222,222,222,0.9)" gutterBottom variant="h5" component="div" textAlign={"center"} >
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
