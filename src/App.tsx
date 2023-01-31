@@ -5,25 +5,21 @@ import Home from './pages/Home'
 import GlobalStyle from './style/globalStyle'
 import Card from './pages/Card'
 import { PokemonProvider } from './hooks/usePokemons'
-import { ThemeProvider } from '@material-ui/core/styles'
-import light from './style/themes/light'
 
 function App() {
   return (
     <>
-      <ThemeProvider theme={light}>
-        <GlobalStyle />
-        <Routes>
-          <Route path='/' element={
-            <PokemonProvider>
-              <Main />
-            </PokemonProvider>
-          }>
-            <Route index element={<Home />} />
-            <Route path='card/:id' element={<Card />} />
-          </Route>
-        </Routes>
-      </ThemeProvider>
+      <GlobalStyle />
+      <Routes>
+        <Route path='/' element={
+          <PokemonProvider>
+            <Main />
+          </PokemonProvider>
+        }>
+          <Route index element={<Home />} />
+          <Route path='card/:id' element={<Card />} />
+        </Route>
+      </Routes>
     </>
   )
 }
