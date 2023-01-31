@@ -12,8 +12,4 @@ export default createGlobalStyle`
         overflow-x: hidden;
     }
 
-    body{
-    background-color: ${props => props.theme.colors.backgroundColors};
-    
-    }
 `;
