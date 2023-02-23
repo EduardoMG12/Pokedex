@@ -9,4 +9,5 @@ export interface IPokemon {
         front_shiny: string,
         back_shiny: string
     }
+    abilities: {ability:{name:string}}[]
 };

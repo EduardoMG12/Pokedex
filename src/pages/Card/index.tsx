@@ -35,7 +35,6 @@ const Card = () => {
                     <img src={pokemon?.sprites?.back_shiny} alt="" width={300} />
                     <div>
                         <h2>{pokemon?.name}</h2>
-
                     </div>
                 </Container>
 
